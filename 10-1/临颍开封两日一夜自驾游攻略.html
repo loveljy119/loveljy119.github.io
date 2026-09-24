@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>临颍—开封 两日一夜自驾游攻略 · 万岁山武侠城 + 清明上河园</title>
+<style>
+  :root {
+    --ink: #2c2c2a;
+    --muted: #5f5e5a;
+    --faint: #888780;
+    --line: #e5e2d8;
+    --bg: #faf9f4;
+    --card: #ffffff;
+    --amber: #854f0b;
+    --amber-bg: #faeeda;
+    --teal: #0f6e56;
+    --teal-bg: #e1f5ee;
+    --purple: #534ab7;
+    --purple-bg: #eeedfe;
+    --coral: #993c1d;
+    --coral-bg: #faece7;
+    --blue: #185fa5;
+    --blue-bg: #e6f1fb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+
+  header.hero {
+    background: linear-gradient(135deg, #3c3489 0%, #534ab7 55%, #7f77dd 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 36px 32px;
+    margin-bottom: 28px;
+  }
+  header.hero h1 { font-size: 26px; font-weight: 700; letter-spacing: 1px; }
+  header.hero p.sub { margin-top: 10px; font-size: 14px; opacity: .92; }
+  .hero-tags { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .hero-tags span {
+    background: rgba(255,255,255,.16);
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 999px;
+    padding: 3px 12px;
+    font-size: 12.5px;
+  }
+
+  section { margin-bottom: 30px; }
+  h2 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  h2 .n {
+    width: 26px; height: 26px; border-radius: 8px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 14px; color: #fff; flex: none;
+  }
+  .n-1 { background: #ba7517; } .n-2 { background: #534ab7; }
+  .n-3 { background: #1d9e75; } .n-4 { background: #378add; }
+  .n-5 { background: #d85a30; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 22px;
+  }
+  .card + .card { margin-top: 12px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-weight: 600; color: var(--muted); font-size: 13px; background: #f4f2ea; }
+  tr:last-child td { border-bottom: none; }
+  td.time { white-space: nowrap; font-weight: 600; color: var(--blue); width: 92px; }
+  td .hl { color: var(--coral); font-weight: 600; }
+
+  .route-box {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+    background: var(--blue-bg); border: 1px solid #b5d4f4; border-radius: 10px;
+    padding: 14px 16px; font-size: 14px; font-weight: 600; color: var(--blue);
+  }
+  .route-box .sep { color: #85b7eb; font-weight: 400; }
+  .route-meta { margin-top: 10px; font-size: 13px; color: var(--muted); font-weight: 400; }
+  .route-meta b { color: var(--ink); }
+
+  .day-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+  .day-head .badge { font-size: 12px; padding: 2px 10px; border-radius: 999px; font-weight: 600; }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .badge-teal { background: var(--teal-bg); color: var(--teal); }
+  .day-sub { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+
+  .note {
+    border-left: 4px solid var(--purple);
+    background: var(--purple-bg);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    color: #3c3489;
+  }
+  .warn {
+    border-left: 4px solid #d85a30;
+    background: var(--coral-bg);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    color: var(--coral);
+  }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
+
+  .kv { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
+  .kv:last-child { border-bottom: none; }
+  .kv b { font-weight: 600; }
+  .kv .price { color: var(--coral); font-weight: 700; white-space: nowrap; }
+
+  footer { text-align: center; font-size: 12px; color: var(--faint); margin-top: 36px; line-height: 1.9; }
+  .tag-line { font-size: 12.5px; color: var(--faint); margin-top: 6px; }
+  .money-total { font-size: 17px; font-weight: 700; color: var(--coral); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>临颍 → 开封 · 两日一夜自驾游</h1>
+    <p class="sub">万岁山武侠城 + 清明上河园双园联玩 · 只跑一趟高速 · 演出一场不落</p>
+    <div class="hero-tags">
+      <span>单程约 160 km / 2 小时 15 分</span>
+      <span>Day1 万岁山 · Day2 清园</span>
+      <span>夜宿龙亭区</span>
+      <span>人均约 490–750 元</span>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="n n-4">①</span>路线与行车</h2>
+    <div class="card">
+      <div class="route-box">
+        临颍 <span class="sep">→</span> 京港澳高速 G4 <span class="sep">→</span> 兰南高速 S83 <span class="sep">→</span> 安罗高速 S25 <span class="sep">→</span> 郑民高速 S82 <span class="sep">→</span> 开封南苑出口 <span class="sep">→</span> 龙亭区
+      </div>
+      <p class="route-meta">
+        <b>单程 153–162 公里</b>，纯开车约 <b>2 小时 15 分</b>；单程路桥费约 35 元、油费约 48 元，<b>往返合计约 171 元</b>。
+        全程只跑这一趟高速，两天园子间移动都在 10 分钟车程内。切勿走连霍绕郑州，会多 40 公里。
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n n-1">②</span>Day 1 · 万岁山武侠城（江湖日）</h2>
+    <div class="card">
+      <div class="day-head">
+        <div class="badge badge-amber">8:00 出发 · 不用赶早</div>
+        <div class="badge badge-amber">门票 100 元 · 3 天不限次</div>
+      </div>
+      <p class="day-sub">地址：龙亭区东京大道中段（联票含翰园碑林 + 开封城墙 + 铁塔公园）· 营业 8:00–23:00</p>
+      <table>
+        <tr><th class="time">时间</th><th>安排</th></tr>
+        <tr><td class="time">8:00</td><td>临颍出发，导航「万岁山武侠城」</td></tr>
+        <tr><td class="time">10:15</td><td>抵开封，先去酒店寄存行李，再进园（景区门口换接驳或停北门）</td></tr>
+        <tr><td class="time">11:00</td><td>直奔校场看 <span class="hl">《岳飞枪挑小梁王》</span>实景马战，提前 30 分钟占前排</td></tr>
+        <tr><td class="time">12:00</td><td>水浒街午餐（灌汤包 / 烩面，人均 30），顺看《王婆说媒》《李逵断案》</td></tr>
+        <tr><td class="time">14:30</td><td>城寨沙场 <span class="hl">《三打祝家庄》</span>——真火炮攻城，全园最震撼</td></tr>
+        <tr><td class="time">16:30</td><td>二刷祝家庄，或去大宋科举院、武馆体验（科举 / 少林棍 / 木版年画）</td></tr>
+        <tr><td class="time">18:50</td><td>快活林《风雪山神庙》，林冲雪夜复仇火光特效</td></tr>
+        <tr><td class="time">19:20</td><td><span class="hl">非遗打铁花</span>，1600℃ 铁水泼天如星雨，提前 40 分钟占位</td></tr>
+        <tr><td class="time">20:05</td><td>《三打祝家庄》夜场 + 21:00 神州灯光秀（水上飞人注意躲水）</td></tr>
+        <tr><td class="time">21:30</td><td>出园，5–10 分钟车程回酒店</td></tr>
+      </table>
+      <p class="tag-line">偷懒版：17:00 出园，19:30 前回到酒店休整，夜场留给 Day 2 一次看全。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n n-2">③</span>夜宿开封 · 龙亭区（两园正中间）</h2>
+    <div class="card">
+      <p class="day-sub">推荐住万康苑 / 西关北街 / 大梁路一带，去两园都只需 5–10 分钟，车停酒店过夜最省心。节假日房价波动大，<b style="color:var(--coral)">至少提前 2 周预订</b>。</p>
+      <table>
+        <tr><th>档位</th><th>推荐</th><th>参考价</th><th>亮点</th></tr>
+        <tr><td>经济</td><td>如家 neo（清园万岁山景区店）4.8 分</td><td class="price">约 100 元</td><td>大梁路，停车方便，连锁有保障</td></tr>
+        <tr><td>经济</td><td>银杏日记·民宿（万岁山南门店）4.7 分</td><td class="price">约 110 元</td><td>距清园 488 米，宋风主题房型</td></tr>
+        <tr><td>舒适</td><td>维也纳国际（清园万岁山店）4.4 分</td><td class="price">约 238 元</td><td>亲子房 + 充电桩，新能源友好</td></tr>
+        <tr><td>湖景</td><td>龙亭湖院 4.7 分</td><td class="price">约 294 元</td><td>临龙亭湖，环境安静出片</td></tr>
+        <tr><td>高端</td><td>鹿鸣湖畔 4.8 分</td><td class="price">约 483 元</td><td>距清园仅 110 米，步行 2 分钟入园</td></tr>
+      </table>
+      <div class="note" style="margin-top:12px">
+        晚上有余力可去西司夜市或鼓楼夜市宵夜：桶子鸡、炒凉粉、杏仁茶、羊肉炕馍。睡前在「清明上河园官方商城」小程序把 Day 2 的《大宋·东京梦华》票买好（B 区 249 元含门票，实名制需提前 1–3 天）。
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n n-3">④</span>Day 2 · 清明上河园（宋韵日）</h2>
+    <div class="card">
+      <div class="day-head">
+        <div class="badge badge-teal">7:30 自然醒 · 赶 9:00 开园仪式</div>
+        <div class="badge badge-teal">门票 120 元 · 3 天不限次</div>
+      </div>
+      <p class="day-sub">地址：龙亭区龙亭西路 5 号 · 营业 8:30–22:00（旺季延至 23:30）· 车留酒店，步行 / 打车入园</p>
+      <table>
+        <tr><th class="time">时间</th><th>安排</th></tr>
+        <tr><td class="time">8:40</td><td>到迎宾门排队，9:00 <span class="hl">《包公迎宾》</span>开园仪式，可互动接"圣旨"</td></tr>
+        <tr><td class="time">9:25</td><td>《包公巡视汴河漕运》+ 虹桥拍照（早上人最少，最佳机位）</td></tr>
+        <tr><td class="time">10:30</td><td>上善门《决战汴梁城》高空威亚秀 → 11:00 校场《岳飞枪挑小梁王》</td></tr>
+        <tr><td class="time">12:00</td><td>东京食坊午餐（人均 30–50），12:10 蹲限定场《梁山好汉劫囚车》</td></tr>
+        <tr><td class="time">14:00</td><td>大宋全员大巡游，之后大宋科举、4D 球幕《飞越清明上河图》、民俗作坊街</td></tr>
+        <tr><td class="time">16:35</td><td><span class="hl">《大宋·东京保卫战》</span>水上炮战爆破，前排备雨衣（省心版看完这场即返程）</td></tr>
+        <tr><td class="time">17:20</td><td>主题大巡游 → 灯笼墙拍夜景，穿浅色衣服更出片</td></tr>
+        <tr><td class="time">19:35</td><td>《鱼灯巡游》，数百鱼灯漂流，夜游顶流</td></tr>
+        <tr><td class="time">20:10</td><td><span class="hl">《大宋·东京梦华》</span>70 分钟水上实景大秀（B 区 249 元，票已提前买好）</td></tr>
+        <tr><td class="time">21:10</td><td>九龙桥<span class="hl">非遗打铁花</span> → 21:30《岳飞·郾城大捷》夜场马战</td></tr>
+        <tr><td class="time">22:00</td><td>出园回酒店取车 → 22:30 上高速 → <b>约 0:30 到家</b></td></tr>
+      </table>
+      <div class="warn" style="margin-top:12px">
+        省心版返程：不看夜场，17:30 出园取车，19:30 到家。Day 1 已看过打铁花，清园夜景舍弃不亏，还能避免开夜车。
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n n-5">⑤</span>预算与提醒</h2>
+    <div class="grid2">
+      <div class="card">
+        <p class="day-sub" style="margin-bottom:8px"><b>人均预算（按 2 人分摊）</b></p>
+        <div class="kv"><span>油费 + 路桥（一趟往返）</span><b>约 86 元</b></div>
+        <div class="kv"><span>酒店（经济 / 舒适档）</span><b>50 – 120 元</b></div>
+        <div class="kv"><span>万岁山门票</span><b>100 元</b></div>
+        <div class="kv"><span>清明上河园门票</span><b>120 元</b></div>
+        <div class="kv"><span>《东京梦华》B 区（可选）</span><b>约 129 元（差价）</b></div>
+        <div class="kv"><span>三顿正餐 + 小吃</span><b>130 – 180 元</b></div>
+        <div class="kv"><span class="money-total">合计</span><b class="money-total">约 490 – 750 元</b></div>
+        <p class="tag-line">与"两日不住宿"总花费几乎持平（省下的高速费 ≈ 房费），但体验好得多。</p>
+      </div>
+      <div class="card">
+        <p class="day-sub" style="margin-bottom:8px"><b>避坑清单</b></p>
+        <div class="kv"><span>门票均 3 天不限次，两日行程在有效期内</span></div>
+        <div class="kv"><span>《东京梦华》须提前 1–3 天实名购票，现场可能售罄</span></div>
+        <div class="kv"><span>热门演出提前 30 分钟占位（马战 / 打铁花）</span></div>
+        <div class="kv"><span>只在官方小程序 / 美团携程购票，不碰黄牛</span></div>
+        <div class="kv"><span>汉服租园外金耀路，100 元含妆造（园内 200+）</span></div>
+        <div class="kv"><span>平底鞋！两园石板路，日均 2 万步</span></div>
+        <div class="kv"><span>夜场水边凉，带薄外套；保卫战前排会溅水</span></div>
+        <div class="kv"><span>出发前在景区公众号核对当日节目单</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    信息整理于 2026 年 9 月 · 门票 / 演出时间以「清明上河园景区」「万岁山武侠城」官方公众号当日公告为准<br>
+    自驾 640 公里注意轮换驾驶，切勿疲劳驾驶 · 祝旅途愉快，梦回大宋
+  </footer>
+
+</div>
+</body>
+</html>
