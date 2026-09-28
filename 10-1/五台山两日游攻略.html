@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>五台山两日游攻略 · 孝义出发 2大2小 电车自驾</title>
+<style>
+  :root{
+    --primary:#534AB7; --primary-light:#EEEDFE;
+    --teal:#0F6E56; --teal-light:#E1F5EE;
+    --amber:#854F0B; --amber-light:#FAEEDA;
+    --red:#A32D2D; --red-light:#FCEBEB;
+    --text:#26215C; --muted:#6b6b7a; --border:#e6e4ee;
+    --bg:#f7f7fb; --card:#ffffff;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif; background:var(--bg); color:var(--text); line-height:1.7; padding:24px 16px 60px;}
+  .wrap{max-width:860px; margin:0 auto;}
+
+  header{background:linear-gradient(135deg,#534AB7 0%,#7F77DD 100%); color:#fff; border-radius:16px; padding:36px 32px; margin-bottom:24px;}
+  header h1{font-size:26px; font-weight:600; letter-spacing:1px;}
+  header p{margin-top:10px; font-size:14px; opacity:.92;}
+  .tags{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.35); padding:4px 12px; border-radius:999px; font-size:12px;}
+
+  .section{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:26px 28px; margin-bottom:20px;}
+  .section h2{font-size:19px; font-weight:600; margin-bottom:6px; display:flex; align-items:center; gap:10px;}
+  .section h2 .num{width:28px; height:28px; border-radius:8px; background:var(--primary); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; flex:none;}
+  .section > p.sub{color:var(--muted); font-size:13px; margin-bottom:18px;}
+
+  .alert{border-radius:12px; padding:14px 16px; font-size:14px; margin:14px 0;}
+  .alert strong{font-weight:600;}
+  .alert-red{background:var(--red-light); border-left:4px solid var(--red); color:#5a1a1a;}
+  .alert-amber{background:var(--amber-light); border-left:4px solid #BA7517; color:#5a3d08;}
+  .alert-teal{background:var(--teal-light); border-left:4px solid var(--teal); color:#085041;}
+
+  .timeline{position:relative; margin-top:10px;}
+  .timeline::before{content:""; position:absolute; left:63px; top:12px; bottom:12px; width:2px; background:var(--border);}
+  .stop{display:flex; gap:18px; padding:12px 0; position:relative;}
+  .time{width:96px; flex:none; text-align:right; font-weight:600; font-size:14px; color:var(--primary); padding-top:2px;}
+  .dot{flex:none; width:12px; height:12px; border-radius:50%; background:var(--primary); border:3px solid #fff; box-shadow:0 0 0 2px var(--primary); margin-top:6px; z-index:1;}
+  .stop:nth-child(even) .dot{background:#7F77DD;}
+  .content{flex:1; background:#fafaff; border:1px solid var(--border); border-radius:10px; padding:12px 16px;}
+  .content b{font-size:14.5px;}
+  .content p{font-size:13.5px; color:var(--muted); margin-top:2px;}
+  .content .fee{display:inline-block; margin-top:6px; background:var(--primary-light); color:var(--primary); font-size:12px; padding:2px 10px; border-radius:999px;}
+
+  .day2 .time{color:var(--teal);}
+  .day2 .dot{background:var(--teal); box-shadow:0 0 0 2px var(--teal);}
+
+  table{width:100%; border-collapse:collapse; font-size:14px;}
+  th,td{padding:10px 12px; text-align:left; border-bottom:1px solid var(--border);}
+  th{font-weight:600; color:var(--muted); font-size:13px; background:#fafaff;}
+  td:last-child,th:last-child{text-align:right;}
+  tr.total td{font-weight:600; color:var(--primary); border-bottom:none; background:var(--primary-light);}
+
+  ul.check{list-style:none;}
+  ul.check li{padding:8px 0 8px 34px; position:relative; font-size:14px; border-bottom:1px dashed var(--border);}
+  ul.check li:last-child{border-bottom:none;}
+  ul.check li::before{content:""; position:absolute; left:6px; top:14px; width:16px; height:16px; border-radius:4px; border:2px solid var(--primary);}
+  ul.check li.done::before{background:var(--primary);}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-top:8px;}
+  .card{border:1px solid var(--border); border-radius:10px; padding:16px; font-size:13.5px;}
+  .card b{display:block; font-size:14.5px; margin-bottom:4px; color:var(--primary);}
+  .card.teal b{color:var(--teal);}
+  .card.amber b{color:var(--amber);}
+
+  footer{text-align:center; color:var(--muted); font-size:12px; margin-top:30px;}
+  @media print{ body{background:#fff; padding:0;} .section{break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>五台山两日自驾攻略</h1>
+  <p>10月5日 山西孝义10点出发 → 五台山下午到、宿一晚 → 10月6日上午继续礼佛、下午返京</p>
+  <div class="tags">
+    <span class="tag">2 大 2 小</span>
+    <span class="tag">电车自驾 · 京牌</span>
+    <span class="tag">国庆免费高速</span>
+    <span class="tag">全程约 675 km</span>
+  </div>
+</header>
+
+<div class="section">
+  <h2><span class="num">!</span>出发前必办清单（国庆限流，现在就办）</h2>
+  <p class="sub">国庆期间每日限流 4 万人次、车辆限约 2000 台，先约先得</p>
+  <ul class="check">
+    <li><b>预约门票</b>：微信公众号「五台山游客服务中心」→ 预约通道 → 门票预约（135元/人，6岁以下或1.2米以下儿童免票）。2026年8月新规：门票<b>当日+次日有效，可反复进山</b>，正好匹配住一晚行程。</li>
+    <li><b>预约车辆进山名额</b>：同一公众号 → 预约通道 → 车辆预约。约不上则停南门外围停车场，换乘免费大巴进台怀镇。</li>
+    <li><b>订房</b>：台怀镇家庭房国庆普遍 600–1200 元/晚。推荐杨柏峪/营坊村民宿（性价比）或五峰宾馆、友谊宾馆（舒适），建议立刻预订。</li>
+    <li><b>环保观光车票</b>：50元/人、3天无限次（1.2米以下儿童一般免票）。台怀镇核心区禁私家车，进山后全靠它串联各寺。</li>
+    <li><b>京牌确认</b>：京牌无需进京证、返京不限行，无任何手续；山西段国庆单双号限行仅针对忻州本地牌照，与你无关。</li>
+    <li><b>出发前满电</b>：10月5日出发前充到 100%；10月6日返京前一晚在景区充到 90%+（山区低温掉电快）。</li>
+  </ul>
+  <div class="alert alert-red">
+    <strong>核心提醒：</strong>现在（9月28日）就可以预约 10 月 5 日的门票和车辆名额，越早越好；房间同步下手。
+  </div>
+</div>
+
+<div class="section day1">
+  <h2><span class="num">1</span>Day 1 · 10月5日　孝义 → 五台山（约 320 km）</h2>
+  <p class="sub">路线：G20 青银高速 → 太原绕城 → G55 二广 → 忻州绕城 → G1812 沧榆高速 → 五台山景区出口 → 南门游客中心。平时约 4 小时，国庆 10 点出发正撞返程/中段拥堵，实际可能 5–6 小时。</p>
+  <div class="timeline">
+    <div class="stop">
+      <div class="time">10:00</div><div class="dot"></div>
+      <div class="content"><b>孝义满电出发</b><p>国庆免费高速，上午是出城高峰，建议把宝宝们先吃饱再上路。出发前确保电量 100%。</p></div>
+    </div>
+    <div class="stop">
+      <div class="time">13:00</div><div class="dot"></div>
+      <div class="content"><b>途中服务区午餐 + 休息</b><p>建议在忻州/顿村附近服务区用餐，孩子下车放风。进山前不要吃太撑，山路弯多。</p></div>
+    </div>
+    <div class="stop">
+      <div class="time">15:30</div><div class="dot"></div>
+      <div class="content"><b>抵达南门游客中心 · 验票进山</b><p>刷身份证/二维码入园；自驾至台怀镇酒店放行李，立刻接上充电桩。</p><span class="fee">停车 24h 封顶 24 元</span></div>
+    </div>
+    <div class="stop">
+      <div class="time">16:30</div><div class="dot"></div>
+      <div class="content"><b>近寺打卡：五爷庙 + 塔院寺大白塔</b><p>两个寺相距步行几分钟，作为 Day 1 暖身游，孩子不累。</p><span class="fee">五爷庙免费 · 塔院寺10元</span></div>
+    </div>
+    <div class="stop">
+      <div class="time">18:00</div><div class="dot"></div>
+      <div class="content"><b>广化寺夜景（19:00–21:00 出片）</b><p>回酒店路上顺道看夜景。灯光下红墙古塔最有味道。</p><span class="fee">免费</span></div>
+    </div>
+    <div class="stop">
+      <div class="time">19:30</div><div class="dot"></div>
+      <div class="content"><b>台怀镇晚餐 + 酒店休息</b><p>推荐台蘑面、五台山素斋。回酒店前确认车辆在充电桩上（大文殊寺/广化寺停车场共90把快充枪，250kW，40分钟到80%）。</p><span class="fee">充电约 1.3 元/度</span></div>
+    </div>
+  </div>
+  <div class="alert alert-amber">
+    <strong>10 点出发提示：</strong>虽然到景区已下午 3 点半，但好处是礼佛主力都留到 Day 2 上午，节奏不赶。Day 1 只看离酒店最近的五爷庙和大白塔作为热身。
+  </div>
+  <div class="alert alert-teal">
+    <strong>电车充电一站搞定：</strong>用「晋快充」「云快充」小程序实时查空闲枪位。到景区先插枪再去逛，晚上回酒店正好满电。
+  </div>
+</div>
+
+<div class="section day2">
+  <h2><span class="num">2</span>Day 2 · 10月6日　五台山上午 + 下午返京（约 355 km）</h2>
+  <p class="sub">路线：台怀镇 → 沧榆高速 → G5 京昆高速 → 北京。平时约 4.5 小时；下午出发避开上午返程最堵段，国庆下午车流减少。京牌无需进京证。</p>
+  <div class="timeline">
+    <div class="stop">
+      <div class="time">07:30</div><div class="dot"></div>
+      <div class="content"><b>早课晨钟：五爷庙 / 殊像寺</b><p>清晨香火最盛，可与家人一齐许愿。殊像寺免费，是文殊菩萨祖庭，给孩子求学业。</p><span class="fee">免费</span></div>
+    </div>
+    <div class="stop">
+      <div class="time">09:00</div><div class="dot"></div>
+      <div class="content"><b>显通寺 + 菩萨顶</b><p>显通寺是五台山最大最古祖寺；菩萨顶108级台阶，「小布达拉宫」名不虚传，孩子爬得动。</p><span class="fee">各 10 元/人</span></div>
+    </div>
+    <div class="stop">
+      <div class="time">10:30</div><div class="dot"></div>
+      <div class="content"><b>黛螺顶「小朝台」（缆车往返）</b><p>上午天气好能见度高，孩子坐缆车看山谷秋色，不累。徒步1080级台阶量力而行。</p><span class="fee">门票8元 · 缆车往返85元/人</span></div>
+    </div>
+    <div class="stop">
+      <div class="time">12:00</div><div class="dot"></div>
+      <div class="content"><b>台怀镇午餐 + 回酒店取行李 + 满电出发</b><p>最后一顿山西面食，出发前在酒店/停车场充电桩补到 90%+。</p></div>
+    </div>
+    <div class="stop">
+      <div class="time">13:00</div><div class="dot"></div>
+      <div class="content"><b>满电出发返京</b><p>下山路可回收电量。下午走比上午走车流明显减少，京昆高速保定段不会太堵。</p></div>
+    </div>
+    <div class="stop">
+      <div class="time">17:00</div><div class="dot"></div>
+      <div class="content"><b>保定段服务区休整（如需）</b><p>电量/孩子状态都行得话可一路直京；想吃饭/补电也完全来得及。</p></div>
+    </div>
+    <div class="stop">
+      <div class="time">19:00</div><div class="dot"></div>
+      <div class="content"><b>抵达北京</b><p>京昆高速→西五环进京，行程圆满结束。</p></div>
+    </div>
+  </div>
+  <div class="alert alert-teal">
+    <strong>Day 2 节奏说明：</strong>把礼佛主力放到 Day 2 上午，4 座核心寺（殊像寺+显通寺+菩萨顶+黛螺顶）足够，体验更完整；下午错峰返京也避开了 10 月 6 日上午最堵的车流。
+  </div>
+</div>
+
+<div class="section">
+  <h2><span class="num">3</span>镇内交通：各寺之间怎么走</h2>
+  <p class="sub">台怀镇核心区私家车禁行，车停酒店后靠步行 + 环保观光车串联，多数寺之间步行几分钟即到</p>
+  <table>
+    <tr><th>寺 / 路段</th><th>到下一站</th><th>推荐方式</th></tr>
+    <tr><td>五爷庙 ↔ 塔院寺（大白塔）</td><td>2 分钟</td><td>步行</td></tr>
+    <tr><td>塔院寺 → 显通寺</td><td>3 分钟</td><td>步行</td></tr>
+    <tr><td>显通寺 → 菩萨顶</td><td>5 分钟（108 台阶）</td><td>步行</td></tr>
+    <tr><td>菩萨顶 → 殊像寺</td><td>10 分钟</td><td>步行</td></tr>
+    <tr><td>五爷庙 → 广化寺</td><td>10 分钟</td><td>步行</td></tr>
+    <tr><td>台怀镇 → 黛螺顶</td><td>3 km，山路</td><td><b>环保车 + 缆车</b></td></tr>
+  </table>
+  <div class="alert alert-teal" style="margin-top:14px;">
+    <strong>结论：</strong>除黛螺顶外全部步行可达（一天约 3–4 km），环保车 50 元/人（3天无限次）作为孩子走不动的兜底；黛螺顶必须环保车上山 + 缆车往返 85 元/人。
+  </div>
+</div>
+
+<div class="section">
+  <h2><span class="num">4</span>带娃与穿衣提醒</h2>
+  <div class="grid">
+    <div class="card"><b>气温</b>台怀镇海拔约1700米，10月白天约9℃、早晚接近0℃。</div>
+    <div class="card"><b>穿衣</b>大人小孩都带轻薄羽绒/厚外套+帽子，洋葱式穿法。</div>
+    <div class="card amber"><b>不建议上五个台顶</b>台顶零下、7–9级大风，带娃不合适；黛螺顶缆车小朝台足矣。</div>
+    <div class="card teal"><b>孩子体力节奏</b>礼佛路线都是短步行，观光车串联，强度可控；午餐别太晚，孩子饿了容易闹。</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2><span class="num">5</span>预算参考（2大2小）</h2>
+  <table>
+    <tr><th>项目</th><th>估算</th></tr>
+    <tr><td>进山门票（2大人，孩子视年龄免票/半价）</td><td>270 元</td></tr>
+    <tr><td>环保观光车</td><td>150–200 元</td></tr>
+    <tr><td>寺庙小门票 + 黛螺顶缆车</td><td>100–250 元</td></tr>
+    <tr><td>住宿 1 晚（家庭房）</td><td>600–1200 元</td></tr>
+    <tr><td>停车（24h 封顶）+ 全程充电</td><td>150–250 元</td></tr>
+    <tr><td>高速通行费</td><td>0 元（国庆免费）</td></tr>
+    <tr class="total"><td>合计（不含餐饮）</td><td>约 1300–2200 元</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2><span class="num">6</span>预约攻略：几点放票 · 怎么抢（重中之重）</h2>
+  <div class="alert alert-red">
+    <strong>官方放票规则（景区客服答复）：</strong>门票和车辆都是<strong>提前一天凌晨 0:00 开放预约</strong>，<strong>先购票、后约车</strong>，约满即止、没有候补。10 月 5 日进山 = <strong>10 月 4 日 00:00 准时抢</strong>。
+  </div>
+  <table>
+    <tr><th>时间</th><th>动作</th></tr>
+    <tr><td>现在（9月28日）</td><td><b>订酒店</b>（国庆房源比票还紧张）；关注公众号「五台山游客服务中心」</td></tr>
+    <tr><td>10月3日前</td><td>把 4 人身份证信息录入微信实名认证 / 国家网络身份认证 APP，提前绑定，省当晚时间</td></tr>
+    <tr><td><b>10月4日 23:55</b></td><td>打开公众号 → 预约通道 → 门票预约页面待命；4 人身份证号提前复制到备忘录</td></tr>
+    <tr><td><b>10月5日 00:00</b></td><td>抢 4 张 10 月 5 日进山门票（135元/人）+ 50 元/人环保车票，立即支付</td></tr>
+    <tr><td>00:02</td><td>支付成功后<b>立刻约车辆</b>（每日限 2000 台）→ 输入车牌提交 → 截图保存二维码</td></tr>
+  </table>
+  <div class="grid" style="margin-top:14px;">
+    <div class="card"><b>门票预约</b>公众号「五台山游客服务中心」→ 预约通道 → 门票预约 → 填全部4人实名信息 → 支付 → 保存二维码。进山刷身份证/二维码，无需取票。</div>
+    <div class="card"><b>车辆预约</b>必须先完成购票，再走预约通道 → 车辆预约 → 填车牌与驾驶员信息。预约成功当日有效，从南门驶入台怀镇。</div>
+    <div class="card amber"><b>抢票实战</b>0点系统可能卡30秒，刷不开就退出重进，别狂点同一按钮；提前确认微信支付余额≥200元；避开VPN/内网。</div>
+    <div class="card teal"><b>约不上车的兜底</b>车停南门外围免费停车场 → 免费接驳大巴进台怀镇；行李精简、随身带足孩子保暖衣物。</div>
+    <div class="card teal"><b>官方电话</b>五台山景区服务热线：400-108-2299 / 0350-96366。出发前可电话确认当日政策。</div>
+  </div>
+</div>
+
+<footer>祝一家四口五台山之行平安顺利 · 攻略生成于 2026-09-28 · 出行前请以「五台山游客服务中心」公众号最新通知为准</footer>
+</div>
+</body>
+</html>
