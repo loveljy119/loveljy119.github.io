@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美的星河 vs 海尔 P5 · 深度横评对比</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #f0f7ff 0%, #fef3f2 100%);
+    color: #1a1a1a;
+    padding: 24px 16px;
+    line-height: 1.6;
+  }
+  .container { max-width: 1320px; margin: 0 auto; }
+  header {
+    text-align: center;
+    margin-bottom: 28px;
+    padding: 28px 20px;
+    background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+    border-radius: 16px;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.25);
+  }
+  header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+  header p { font-size: 15px; opacity: 0.95; }
+  header .tag {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 4px 14px;
+    background: rgba(255,255,255,0.22);
+    border-radius: 999px;
+    font-size: 13px;
+  }
+
+  .overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .overview-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-left: 4px solid #0ea5e9;
+  }
+  .overview-card .label { font-size: 12px; color: #64748b; margin-bottom: 4px; }
+  .overview-card .value { font-size: 18px; font-weight: 700; color: #0c4a6e; }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0c4a6e;
+    margin: 32px 0 16px;
+    padding-left: 12px;
+    border-left: 5px solid #0ea5e9;
+  }
+
+  .table-wrap {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    min-width: 1200px;
+  }
+  thead { background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%); }
+  thead th {
+    padding: 14px 10px;
+    text-align: center;
+    font-weight: 700;
+    color: #0c4a6e;
+    border-bottom: 2px solid #0ea5e9;
+    white-space: nowrap;
+    font-size: 12.5px;
+  }
+  thead th.brand-header {
+    background: linear-gradient(180deg, #fef3c7 0%, #fde68a 100%);
+    color: #78350f;
+    border-bottom-color: #f59e0b;
+  }
+  tbody tr {
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.15s;
+  }
+  tbody tr:hover { background: #f8fafc; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody td {
+    padding: 12px 10px;
+    text-align: center;
+    vertical-align: middle;
+    color: #334155;
+  }
+  td.row-title {
+    text-align: left;
+    font-weight: 600;
+    color: #0f172a;
+    background: #f8fafc;
+    white-space: nowrap;
+  }
+  td.row-title small { color: #64748b; font-weight: 400; }
+  .price {
+    color: #dc2626;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .price-sub { font-size: 11px; color: #94a3b8; font-weight: 400; }
+  .best-cell {
+    background: #ecfdf5 !important;
+    font-weight: 600;
+    color: #065f46;
+    position: relative;
+  }
+  .best-cell::after {
+    content: "★";
+    color: #f59e0b;
+    margin-left: 4px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .badge-blue { background: #dbeafe; color: #1e40af; }
+  .badge-green { background: #dcfce7; color: #166534; }
+  .badge-orange { background: #ffedd5; color: #9a3412; }
+  .badge-pink { background: #fce7f3; color: #9d174d; }
+  .badge-purple { background: #f3e8ff; color: #6b21a8; }
+  .feature { font-size: 12px; color: #475569; }
+  .winner { background: #ecfdf5; font-weight: 600; color: #065f46; }
+
+  .vs {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    margin: 24px 0;
+    align-items: stretch;
+  }
+  .vs-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .vs-card.left { border-top: 4px solid #0ea5e9; }
+  .vs-card.right { border-top: 4px solid #f59e0b; }
+  .vs-card h3 { font-size: 16px; margin-bottom: 12px; }
+  .vs-card.left h3 { color: #0c4a6e; }
+  .vs-card.right h3 { color: #78350f; }
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: #94a3b8;
+  }
+  .vs-card ul { list-style: none; padding: 0; }
+  .vs-card li {
+    padding: 6px 0 6px 22px;
+    position: relative;
+    font-size: 13px;
+    color: #475569;
+  }
+  .vs-card li::before {
+    content: "▸";
+    position: absolute;
+    left: 8px;
+    color: #0ea5e9;
+  }
+  .vs-card.right li::before { color: #f59e0b; }
+
+  .scenarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+  }
+  .scenario {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-left: 4px solid #10b981;
+  }
+  .scenario h4 { font-size: 14px; color: #064e3b; margin-bottom: 8px; }
+  .scenario .pick {
+    display: inline-block;
+    background: #d1fae5;
+    color: #065f46;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .scenario p { font-size: 12.5px; color: #475569; }
+
+  .key-params {
+    background: #fff;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-top: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .key-params h3 { color: #0c4a6e; margin-bottom: 12px; font-size: 16px; }
+  .key-params ul { list-style: none; padding: 0; }
+  .key-params li {
+    padding: 5px 0;
+    font-size: 13px;
+    color: #475569;
+    border-bottom: 1px dashed #e2e8f0;
+  }
+  .key-params li:last-child { border-bottom: none; }
+  .key-params strong { color: #0c4a6e; }
+
+  footer {
+    text-align: center;
+    margin-top: 24px;
+    color: #94a3b8;
+    font-size: 12px;
+  }
+  @media (max-width: 768px) {
+    .vs { grid-template-columns: 1fr; }
+    .vs-divider { padding: 8px 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🥊 美的星河全系 vs 海尔鲜活水 P5</h1>
+      <p>5 款主流机型 · 8 个关键维度 · 一张表看清谁更值</p>
+      <div class="tag">数据更新于 2026 年 10 月 · 京东/天猫主流电商价</div>
+    </header>
+
+    <div class="overview">
+      <div class="overview-card">
+        <div class="label">📊 对比机型</div>
+        <div class="value">5 款</div>
+      </div>
+      <div class="overview-card" style="border-left-color:#f59e0b">
+        <div class="label">💰 价格区间</div>
+        <div class="value">1357 - 2699 元</div>
+      </div>
+      <div class="overview-card" style="border-left-color:#8b5cf6">
+        <div class="label">🆚 对比维度</div>
+        <div class="value">8 个</div>
+      </div>
+      <div class="overview-card" style="border-left-color:#10b981">
+        <div class="label">🏷️ 涉及品牌</div>
+        <div class="value">2 个</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">📋 全参数对比表</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2" style="text-align:left; padding-left:16px; min-width:160px;">对比维度</th>
+            <th colspan="4" class="brand-header" style="background: linear-gradient(180deg, #fef3c7 0%, #fde68a 100%); color:#78350f; border-bottom-color:#f59e0b;">美的 星河系列</th>
+            <th rowspan="2" class="brand-header" style="background: linear-gradient(180deg, #fed7aa 0%, #fdba74 100%); color:#7c2d12; border-bottom-color:#ea580c; min-width:170px;">海尔 鲜活水 P5<br><small style="font-weight:400; opacity:0.7;">(1400G 2026年4月)</small></th>
+          </tr>
+          <tr>
+            <th>星河 1200G<br>Pro<br><small style="font-weight:400; opacity:0.6;">老款 1.0</small></th>
+            <th>星河 2.0<br>1200G Pro+<br><small style="font-weight:400; opacity:0.6;">净矿双出水</small></th>
+            <th>星河 2.0<br>1000G Pro+<br><small style="font-weight:400; opacity:0.6;">净矿</small></th>
+            <th>星河 2.0<br>1000G Pro<br><small style="font-weight:400; opacity:0.6;">入门 2.0</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-title">📌 型号</td>
+            <td>MRC805C-3000</td>
+            <td>MRC2288B-1000G<br><small>（2.0 顶配）</small></td>
+            <td>— </td>
+            <td>— </td>
+            <td>HKC3500-R502U1</td>
+          </tr>
+          <tr>
+            <td class="row-title">💰 京东参考价</td>
+            <td><span class="price">2098</span><div class="price-sub">凑单 1446-1477</div></td>
+            <td><span class="price">2085</span><div class="price-sub">国补 1839</div></td>
+            <td><span class="price">1899</span><div class="price-sub">史低 1642</div></td>
+            <td><span class="price">1500左右</span><div class="price-sub">入门级</div></td>
+            <td><span class="price">2002</span><div class="price-sub">史低/国补 1357</div></td>
+          </tr>
+          <tr>
+            <td class="row-title">⚙️ 通量 / 出水速度</td>
+            <td><span class="badge badge-blue">1200G</span><br>3.15 L/min</td>
+            <td><span class="badge badge-blue">1200G</span><br>3.24 L/min</td>
+            <td><span class="badge badge-orange">1000G</span><br>2.6 L/min</td>
+            <td><span class="badge badge-orange">1000G</span><br>2.6 L/min</td>
+            <td class="best-cell"><span class="badge badge-pink">1400G</span><br>3.5 L/min</td>
+          </tr>
+          <tr>
+            <td class="row-title">💧 RO 膜品牌 / 寿命</td>
+            <td>杜邦陶氏 / 6年</td>
+            <td>杜邦陶氏 / 6年</td>
+            <td>杜邦 / 5年</td>
+            <td>杜邦 / 5年</td>
+            <td class="best-cell">东丽 / 6年<br><small>(进口)</small></td>
+          </tr>
+          <tr>
+            <td class="row-title">📊 RO 总净水量</td>
+            <td>21.9 吨</td>
+            <td class="best-cell">44 吨</td>
+            <td>40 吨</td>
+            <td>—</td>
+            <td>8000 L (8吨)<br><small>含前置合计</small></td>
+          </tr>
+          <tr>
+            <td class="row-title">🧪 脱盐率</td>
+            <td>96%</td>
+            <td class="best-cell">97%</td>
+            <td>97%</td>
+            <td>97%</td>
+            <td>90%+ (静置8h)<br><small>非标脱盐</small></td>
+          </tr>
+          <tr>
+            <td class="row-title">💦 出水模式</td>
+            <td>纯净水 + 生活水<br><small>(单直饮)</small></td>
+            <td class="best-cell">纯净水 + 鲜矿水<br><small>(双直饮 · 1机2水)</small></td>
+            <td>纯净水 + 鲜矿水</td>
+            <td>纯净水 + 鲜矿水</td>
+            <td>单直饮<br><small>(0陈水技术补救)</small></td>
+          </tr>
+          <tr>
+            <td class="row-title">🛡️ 0 阻垢剂 / 0 双酚A</td>
+            <td><span class="badge badge-green">✅ 三个0</span></td>
+            <td><span class="badge badge-green">✅ 三个0</span></td>
+            <td><span class="badge badge-green">✅ 三个0</span></td>
+            <td><span class="badge badge-green">✅ 三个0</span></td>
+            <td class="best-cell"><span class="badge badge-green">✅ 0阻垢</span><br>纯物理自净化</td>
+          </tr>
+          <tr>
+            <td class="row-title">💵 年滤芯成本</td>
+            <td>约 459 元/年</td>
+            <td class="best-cell">约 399 元/年</td>
+            <td>约 399 元/年</td>
+            <td>约 399 元/年</td>
+            <td class="best-cell">< 0.2 元/天<br>≈ 73 元/年</td>
+          </tr>
+          <tr>
+            <td class="row-title">📱 智能功能</td>
+            <td>触控彩屏 + APP</td>
+            <td>触控彩屏 + APP<br>矿物质水监测</td>
+            <td>触控彩屏 + APP</td>
+            <td>触控彩屏 + APP</td>
+            <td>海尔智家 APP<br><small>无龙头触控屏</small></td>
+          </tr>
+          <tr>
+            <td class="row-title">🔧 维护便利性</td>
+            <td>侧抽二芯<br><span class="badge badge-green">易换芯</span></td>
+            <td>侧抽二芯<br><span class="badge badge-green">易换芯</span></td>
+            <td>侧抽二芯</td>
+            <td>侧抽二芯</td>
+            <td>自净化技术<br><span class="badge badge-purple">无需手动冲洗</span></td>
+          </tr>
+          <tr>
+            <td class="row-title">📐 尺寸 (mm)</td>
+            <td>132×460×430</td>
+            <td>132×460×430</td>
+            <td>132×460×430</td>
+            <td>132×460×430</td>
+            <td>146×466×447</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title">⚔️ 关键差异对决</h2>
+    <div class="vs">
+      <div class="vs-card left">
+        <h3>💙 美的星河系列核心优势</h3>
+        <ul>
+          <li><strong>"1机2水"双直饮设计</strong>：纯净水 + 鲜矿水分开出水，泡茶煲汤用鲜矿水、直饮用纯水</li>
+          <li><strong>保留 10 种微量元素</strong>：钙、镁、锌、钾及地方矿物元素，更符合国人饮水习惯</li>
+          <li><strong>RO 总净水量行业顶配</strong>：1200G Pro 达 44 吨（约 88000 杯水）</li>
+          <li><strong>脱盐率 97%</strong>：高于行业平均，过滤更彻底</li>
+          <li><strong>滤芯年成本低</strong>：2.0 系列 399 元/年，比 1.0 省 60 元/年</li>
+          <li><strong>触控彩屏龙头</strong>：直观显示 TDS、定量出水、定制功能</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-card right">
+        <h3>🧡 海尔 P5 核心优势</h3>
+        <ul>
+          <li><strong>通量 1400G 行业领先</strong>：出水 3.5 L/min，比美的 1200G 快 11%</li>
+          <li><strong>纯物理"滤芯自净化"</strong>：0 化学阻垢剂，靠高压纯水冲膜，母婴级安全</li>
+          <li><strong>静置 8 小时首杯水直饮</strong>：脱盐率仍 > 90%，早上不用放水</li>
+          <li><strong>换芯成本极低</strong>：日均 0.2 元，年成本约 73 元，比美的便宜 80%</li>
+          <li><strong>东丽进口 RO 膜</strong>：日本进口，与陶氏同级别但成本更低</li>
+          <li><strong>海尔售后网络</strong>：全国 17000+ 服务网点，乡镇覆盖强</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">🎯 按需求场景精准选购</h2>
+    <div class="scenarios">
+      <div class="scenario" style="border-left-color:#0ea5e9">
+        <h4>👨‍👩‍👧 有老人小孩的家庭</h4>
+        <div class="pick">⭐ 美的星河 2.0 1200G Pro+</div>
+        <p>鲜矿水模式保留 10 种微量元素，老人泡茶、宝宝冲奶粉都更合适；触控彩屏老人也好操作。</p>
+      </div>
+      <div class="scenario" style="border-left-color:#0ea5e9">
+        <h4>🏠 新房装修、母婴优先</h4>
+        <div class="pick">⭐ 海尔 P5 1400G</div>
+        <p>纯物理 0 阻垢，化学残留顾虑可彻底打消；首杯水直饮+1400G 大流量，体验更省心。</p>
+      </div>
+      <div class="scenario" style="border-left-color:#f59e0b">
+        <h4>💰 追求极致性价比</h4>
+        <div class="pick">⭐ 海尔 P5（国补/史低 1357 元）</div>
+        <p>同样 1500 元预算，P5 性能远超美的入门款，国补后到手价甚至低于美的 2.0 1000G Pro+。</p>
+      </div>
+      <div class="scenario" style="border-left-color:#f59e0b">
+        <h4>🛡️ 北方高硬度水 / 老旧小区</h4>
+        <div class="pick">⭐ 美的星河 2.0 1200G Pro+</div>
+        <p>44 吨超大 RO 净水量，化学阻垢剂对硬水友好，长期使用膜不易堵；PP 棉前置抗污能力强。</p>
+      </div>
+      <div class="scenario" style="border-left-color:#8b5cf6">
+        <h4>⏱️ 急性子、追求大流量</h4>
+        <div class="pick">⭐ 海尔 P5 1400G</div>
+        <p>3.5 L/min 出水速度行业领先，3 秒接满一杯水，5 口之家高峰用水不排队。</p>
+      </div>
+      <div class="scenario" style="border-left-color:#8b5cf6">
+        <h4>📱 智能家居联动</h4>
+        <div class="pick">⭐ 美的星河系列</div>
+        <p>触控彩屏 + APP 监测 + 定量出水 + 矿物质水模式，智能化体验明显领先海尔 P5。</p>
+      </div>
+      <div class="scenario" style="border-left-color:#10b981">
+        <h4>💸 长期使用成本敏感</h4>
+        <div class="pick">⭐ 海尔 P5</div>
+        <p>日均 0.2 元换芯成本，比美的 2.0 系列年省 326 元，10 年省 3260 元。</p>
+      </div>
+      <div class="scenario" style="border-left-color:#10b981">
+        <h4>🛒 看重大品牌售后</h4>
+        <div class="pick">⭐ 平手（按地区）</div>
+        <p>海尔 17000+ 网点乡镇覆盖强；美的智能售后+京东自营物流快，城市用户体验更好。</p>
+      </div>
+    </div>
+
+    <div class="key-params">
+      <h3>📖 选购关键参数解读</h3>
+      <ul>
+        <li><strong>通量 (G)</strong>：数字越大出水越快。1000G ≈ 2.6L/min，1200G ≈ 3.1-3.25L/min，1400G ≈ 3.5L/min。3 口以上家庭建议 1200G 起。</li>
+        <li><strong>RO 膜品牌</strong>：杜邦陶氏/东丽（进口）> 杜邦/陶氏（国产版本）> 自主品牌。美的 1.0/2.0 用陶氏，海尔 P5 用东丽，两者都是进口顶级膜。</li>
+        <li><strong>RO 总净水量</strong>：决定滤芯能用多久。40 吨以上为优秀，美的 2.0 1200G Pro 达 44 吨属于顶配。</li>
+        <li><strong>脱盐率</strong>：96% 是主流水平，97% 是行业领先（美的 2.0），海尔 P5 的"静置 8h 脱盐率 90%"是不同测试维度，更看重首杯水安全。</li>
+        <li><strong>净矿双出水</strong>：美的 2.0 独有，一台机器出纯净水 + 鲜矿水。鲜矿水保留微量元素，更适合泡茶、煲汤、冲奶粉。</li>
+        <li><strong>0 阻垢剂</strong>：分两种实现路径——美的 2.0 是"无化学阻垢剂"、海尔 P5 是"纯物理自净化"代替化学阻垢。两者都避免了磷酸盐类阻垢剂残留。</li>
+        <li><strong>滤芯年成本</strong>：美的 2.0 = 399 元/年，海尔 P5 ≈ 73 元/年。差距主因是 RO 膜寿命（6年 vs 6年）和 PPC 复合滤芯价格。</li>
+        <li><strong>首杯水 TDS</strong>：RO 净水器静置后第一杯水的 TDS 会偏高。海尔 P5 通过"鲜活水自净化"技术解决，美的用"零陈水"技术解决，效果类似。</li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>⚠️ 价格信息为电商平台近期活动参考价，实际购买以当下京东/天猫/官方旗舰店为准 · 数据来源：美的/海尔京东自营、官方商城、ZOL 中关村在线、什么值得买等</p>
+    </footer>
+  </div>
+</body>
+</html>
